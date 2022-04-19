@@ -21,7 +21,7 @@ async function getData(search) {
         },
         mode: "no-cors"
     }).then(res => {
-        res.json();
+        res.body;
     }).catch((err) => {
         console.log(err);
     })
