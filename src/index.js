@@ -18,8 +18,7 @@ async function getData(search) {
     const data = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20`, {
         headers: {
             'Content-type': 'application/json',
-        },
-        mode: "no-cors"
+        }
     }).then(res => {
         res.body;
     }).catch((err) => {
