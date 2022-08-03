@@ -11,7 +11,7 @@ function App() {
         if (Count < 2) {
             SetCount((prev) => (prev = prev + 1));
         } else {
-            fetch(`https://pokeapi.co/api/v2/pokemon/${Data}`, {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${Data.toLowerCase()}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -24,9 +24,9 @@ function App() {
                         ...prev,
                         `muneeb@me# `,
                         `Name: ${data.name}`,
-                        `Height: ${data.height}`,
-                        `Weight: ${data.weight}`,
-                        `Types: ${data.types[0].type.name}`
+                        `Height: ${data.height}m`,
+                        `Weight: ${data.weight}kgs`,
+                        `Types: ${(data.types.map(ele => ele.type.name)).join(',')}`
                     ])
                 )
                 .catch((err) => {
